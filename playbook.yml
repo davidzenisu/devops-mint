@@ -79,10 +79,10 @@
       apt:
         name: code
         state: present
+
     - name: Install VS Code extensions
       become: no
-      
-    - shell: |
+      shell: |
         code --install-extension {{ item }}
       with_items:
         - ms-vscode-remote.remote-containers
