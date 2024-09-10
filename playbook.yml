@@ -35,7 +35,7 @@
     - name: Add Docker repository
       ansible.builtin.apt_repository:
         repo: >-
-          deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://download.docker.com/linux/ubuntu { codename_mapping[ansible_lsb.codename] | default(ansible_lsb.codename) }} stable
+          deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://download.docker.com/linux/ubuntu {{ codename_mapping[ansible_lsb.codename] | default(ansible_lsb.codename) }} stable
         filename: docker
         state: present
 
