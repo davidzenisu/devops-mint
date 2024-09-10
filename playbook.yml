@@ -11,6 +11,9 @@
     codename_mapping:  # Map Linux Mint code names to Ubuntu code names
       wilma: jammy
   tasks:
+    - name: Setting host facts using complex arguments
+      set_fact:
+        local_user: "{{ ansible_user_id }}"
     - name: Installation block
       become: yes
       block:
@@ -56,14 +59,9 @@
           state: started
           enabled: yes
   
-      - name: Test printing {{ ansible_user_id }}
-        ansible.builtin.debug:
-          msg: "Adding user: {{ ansible_user_id }}"
-        become: no
-  
       - name: Add current user to the docker group
         user:
-          name: "{{ ansible_user_id }}"
+          name: "{{ local_user }}"
           groups: docker
           append: yes
   
