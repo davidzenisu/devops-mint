@@ -63,4 +63,4 @@ apt install git-all -y
 
 echo -e "${CYAN} Step 4: Running playbook using ansible-pull${NC}"
 
-ansible-pull -U https://github.com/davidzenisu/devops-mint.git -i local playbook.yml
+ansible-pull -U https://github.com/davidzenisu/devops-mint.git playbook.yml
