@@ -1,5 +1,5 @@
 ---
-- name: Install Docker on Linux Mint
+- name: Install Software on Linux Mint
   hosts: localhost
   connection: local
   become: yes
@@ -23,14 +23,12 @@
           - software-properties-common
         state: present
 
+    # Region: Docker
+    
     - name: Add Docker’s official GPG key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
-        
-    - name: Print architecture variables
-      ansible.builtin.debug:
-        msg: "Architecture: {{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}, Codename: {{ codename_mapping[ansible_lsb.codename] | default(ansible_lsb.codename) }}"
 
     - name: Add Docker repository
       ansible.builtin.apt_repository:
@@ -59,3 +57,24 @@
         name: "{{ ansible_user_id }}"
         group: docker
         append: yes
+
+    # Region: VS Code
+
+    - name: Import Microsoft GPG key
+      apt_key:
+        url: https://packages.microsoft.com/keys/microsoft.asc
+        state: present
+
+    - name: Add VS Code repository
+      apt_repository:
+        repo: 'deb [arch=a{{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://packages.microsoft.com/repos/vscode stable main'
+        state: present
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Visual Studio Code
+      apt:
+        name: code
+        state: present
