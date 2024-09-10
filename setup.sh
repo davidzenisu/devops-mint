@@ -65,6 +65,15 @@ echo -e "${CYAN} Step 4: Running playbook using ansible-pull${NC}"
 
 ansible-pull -U https://github.com/davidzenisu/devops-mint.git playbook.yml
 
+if [ $? -ne 0 ]; then
+    echo echo -e "${RED} Ansible Playbook failed! Please consult the log for additional infos.${NC}"
+    exit 1
+fi
+
+echo -e "${CYAN} Step 5: Refreshing docker group to avoid restart${NC}"
+
+newgrp docker
+
 echo -e "${CYAN}"
 cat << "EOF"
   ______   __    __   ______    ______   ________   ______    ______  
