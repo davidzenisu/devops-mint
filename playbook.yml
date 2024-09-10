@@ -53,9 +53,13 @@
         state: started
         enabled: yes
 
+    - name: Test printing {{ ansible_user_id }}
+      ansible.builtin.debug:
+        msg: Adding user: {{ ansible_user_id }}
+
     - name: Add current user to the docker group
       user:
-        name: "bimbo"
+        name: "{{ ansible_user_id }}"
         groups: docker
         append: yes
 
