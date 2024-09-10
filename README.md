@@ -5,5 +5,5 @@ Setup scripts and ansible playbook to get workstation up and running as quickly 
 
 Run the following command in your bash shell:
 ```
-wget -O - https://raw.githubusercontent.com/davidzenisu/devops-mint/main/setup.sh | sudo bash
+wget -O - https://raw.githubusercontent.com/davidzenisu/devops-mint/main/setup.sh | bash
 ```
