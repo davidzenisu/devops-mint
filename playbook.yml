@@ -3,7 +3,7 @@
 - name: Install Software on Linux Mint
   hosts: localhost
   connection: local
-  become: yes
+  become: no
   vars:
     arch_mapping:  # Map ansible architecture {{ ansible_architecture }} names to Docker's architecture names
       x86_64: amd64
@@ -11,6 +11,11 @@
     codename_mapping:  # Map Linux Mint code names to Ubuntu code names
       wilma: jammy
   tasks:
+    - name: Test printing {{ ansible_user_id }}
+      ansible.builtin.debug:
+        msg: "Adding user: {{ ansible_user_id }}"
+      become: no
+      
     - name: Update the apt package index
       apt:
         update_cache: yes
