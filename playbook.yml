@@ -1,3 +1,4 @@
+# Based on requirements: https://code.visualstudio.com/docs/devcontainers/containers#_installation
 ---
 - name: Install Software on Linux Mint
   hosts: localhost
@@ -78,3 +79,11 @@
       apt:
         name: code
         state: present
+    - name: Install VS Code extensions
+      become: no
+      
+    - shell: |
+        code --install-extension {{ item }}
+      with_items:
+        - ms-vscode-remote.remote-containers
+        - ms-vscode-remote.vscode-remote-extensionpack
