@@ -55,7 +55,7 @@
 
     - name: Test printing {{ ansible_user_id }}
       ansible.builtin.debug:
-        msg: Adding user: {{ ansible_user_id }}
+        msg: "Adding user: {{ ansible_user_id }}"
 
     - name: Add current user to the docker group
       user:
