@@ -70,10 +70,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo -e "${CYAN} Step 5: Refreshing docker group to avoid restart${NC}"
-
-newgrp docker
-
 echo -e "${CYAN}"
 cat << "EOF"
   ______   __    __   ______    ______   ________   ______    ______  
@@ -87,3 +83,5 @@ cat << "EOF"
   \$$$$$$   \$$$$$$   \$$$$$$   \$$$$$$  \$$$$$$$$  \$$$$$$   \$$$$$$        
 EOF
 echo -e "${NC}"
+
+echo -e "${ORANGE} Unfortunately, a system restart is required to remove VS Code issues and  refresh the correct group assignment for your user.${NC}"
