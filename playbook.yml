@@ -1,6 +1,6 @@
 ---
 - name: Install Docker on Linux Mint
-  hosts: all
+  hosts: localhost
   become: yes
   tasks:
     - name: Update the apt package index
