@@ -24,12 +24,12 @@
         
     - name: Print architecture variables
       ansible.builtin.debug:
-        msg: "Architecture: {{ ansible_architecture }}, Codename: {{ ansible_lsb.codename }}"
+        msg: "Architecture: {{ ansible_architecture }}, Codename: jammy (has to be hardcoded on non-ubuntu systems)"
 
     - name: Add Docker repository
       ansible.builtin.apt_repository:
         repo: >-
-          deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
+          deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://download.docker.com/linux/ubuntu jammy stable
         filename: docker
         state: present
 
