@@ -67,7 +67,7 @@
 
     - name: Add VS Code repository
       apt_repository:
-        repo: 'deb [arch=a{{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://packages.microsoft.com/repos/vscode stable main'
+        repo: 'deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://packages.microsoft.com/repos/vscode stable main'
         state: present
 
     - name: Update apt cache
