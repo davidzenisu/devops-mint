@@ -63,7 +63,7 @@ apt install git-all -y
 
 echo -e "${CYAN} Step 4: Running playbook using ansible-pull${NC}"
 
-ansible-pull -U https://github.com/davidzenisu/devops-mint.git playbook.yml
+ansible-pull -k -i localhost, -c local -U https://github.com/davidzenisu/devops-mint.git playbook.yml
 
 if [ $? -ne 0 ]; then
     echo -e "${RED} Ansible Playbook failed! Please consult the log for additional infos.${NC}"
