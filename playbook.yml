@@ -93,3 +93,25 @@
         with_items:
           - ms-vscode-remote.remote-containers
           - ms-vscode-remote.vscode-remote-extensionpack
+      
+      # Region: Steam
+      
+      - name: Import Steam GPG key
+        apt_key:
+          url: https://repo.steampowered.com/steam/archive/stable/steam.gpg
+          state: present
+    
+      - name: Add Steam repository
+        apt_repository:
+          repo: 'deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://repo.steampowered.com/steam/ stable steam'
+          state: present
+    
+      - name: Update apt cache
+        apt:
+          update_cache: yes
+    
+      - name: Install Steam
+        apt:
+          name: 
+            - steam-launcher
+          state: present
