@@ -94,9 +94,24 @@
           - ms-vscode-remote.remote-containers
           - ms-vscode-remote.vscode-remote-extensionpack
       
-      # Region: Steam
-      - name: Steam
+      # Region: Flatpak Apps
+      - name: Creative Suite
         flatpak:
-          name: com.valvesoftware.Steam
+          name: 
+            - md.obsidian.Obsidian
+            - org.godotengine.Godot
+            - org.blender.Blender
+            - org.gimp.GIMP
+            - org.kde.krita
+            - org.audacityteam.Audacity
+            - io.lmms.LMMS
+          state: present
+      - name: Consumer
+        flatpak:
+          name: 
+            - com.valvesoftware.Steam
+            - com.discordapp.Discord
+            - org.videolan.VLC
+            - com.obsproject.Studio
           state: present
     
