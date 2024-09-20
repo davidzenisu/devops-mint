@@ -66,25 +66,9 @@
           append: yes
   
       # Region: VS Code
-  
-      - name: Import Microsoft GPG key
-        apt_key:
-          url: https://packages.microsoft.com/keys/microsoft.asc
-          state: present
-  
-      - name: Add VS Code repository
-        apt_repository:
-          repo: 'deb [arch={{ arch_mapping[ansible_architecture] | default(ansible_architecture) }}] https://packages.microsoft.com/repos/vscode stable main'
-          state: present
-  
-      - name: Update apt cache
-        apt:
-          update_cache: yes
-  
-      - name: Install Visual Studio Code
-        apt:
-          name: code
-          state: present
+      - name: Install VS Code
+        flatpak:
+          name: com.visualstudio.code
   
       - name: Install VS Code extensions
         become: no
