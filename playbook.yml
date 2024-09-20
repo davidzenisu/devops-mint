@@ -95,23 +95,38 @@
           - ms-vscode-remote.vscode-remote-extensionpack
       
       # Region: Flatpak Apps
-      - name: Creative Suite
+      # Region: Creative Suite
+      - name: Install Obsidian
         flatpak:
-          name: 
-            - md.obsidian.Obsidian
-            - org.godotengine.Godot
-            - org.blender.Blender
-            - org.gimp.GIMP
-            - org.kde.krita
-            - org.audacityteam.Audacity
-            - io.lmms.LMMS
-          state: present
-      - name: Consumer
+          name: md.obsidian.Obsidian
+      - name: Install Godot
         flatpak:
-          name: 
-            - com.valvesoftware.Steam
-            - com.discordapp.Discord
-            - org.videolan.VLC
-            - com.obsproject.Studio
-          state: present
-    
+          name: org.godotengine.Godot
+      - name: Install Blender
+        flatpak:
+          name: org.blender.Blender
+      - name: Install GIMP
+        flatpak:
+          name: org.gimp.GIMP
+      - name: Install Krita
+        flatpak:
+          name: org.kde.krita
+      - name: Install Audacity
+        flatpak:
+          name: org.audacityteam.Audacity
+      - name: Install LMMS
+        flatpak:
+          name: io.lmms.LMMS
+      # Region: Consumer
+      - name: Install Steam
+        flatpak:
+          name: com.valvesoftware.Steam
+      - name: Install Discord
+        flatpak:
+          name: com.discordapp.Discord
+      - name: Install VLC
+        flatpak:
+          name: org.videolan.VLC
+      - name: Install OBS
+        flatpak:
+          name:  com.obsproject.Studio
