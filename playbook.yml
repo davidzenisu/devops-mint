@@ -75,6 +75,13 @@
       - name: Install VS Code
         flatpak:
           name: com.visualstudio.code
+
+
+      - name: Set VS Code Alias
+        becoe: no
+        shell: |
+          echo 'alias code="flatpak run com.visualstudio.code"'
+          echo 'alias code="flatpak run com.visualstudio.code"' >> ~/.bashrc
   
       - name: Install VS Code extensions
         become: no
