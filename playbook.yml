@@ -137,3 +137,5 @@
       - name: Install OBS
         flatpak:
           name:  com.obsproject.Studio
+
+#TODO: CopyQ (flathub), GH CLI + SSH Key! (https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt), Alacritty (apt), Howdy (https://github.com/boltgolt/howdy), Password manager (?)
