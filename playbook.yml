@@ -79,13 +79,13 @@
       - name: Set VS Code Alias
         become: no
         shell: |
-          echo 'alias code="flatpak run com.visualstudio.code"'
           echo 'alias code="flatpak run com.visualstudio.code"' >> ~/.bashrc
   
       - name: Install VS Code extensions
         become: no
         shell: |
-          code --install-extension {{ item }}
+          #code --install-extension {{ item }}
+          flatpak run com.visualstudio.code --install-extension {{ item }}
         with_items:
           - ms-vscode-remote.remote-containers
           - ms-vscode-remote.vscode-remote-extensionpack
