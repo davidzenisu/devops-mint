@@ -30,7 +30,9 @@
             - software-properties-common
           state: present
 
-      # Region: Monitor settings
+      # Region: System settings
+      - name: Set Linux Mint Dark Theme
+        shell: gsettings set org.cinnamon.theme name "Mint-Y-Dark-Aqua"
       # TODO: Move config somewhere else!
       - name: Set monitor settings
         shell: |
