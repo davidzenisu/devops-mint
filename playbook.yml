@@ -138,4 +138,9 @@
         flatpak:
           name:  com.obsproject.Studio
 
-#TODO: CopyQ (flathub), GH CLI + SSH Key! (https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt), Alacritty (apt), Howdy (https://github.com/boltgolt/howdy), Password manager (?)
+#TODO: CopyQ (flathub), 
+# GH CLI + SSH Key! (https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt),
+# Alacritty (apt)
+# autrandr (to save settings? https://askubuntu.com/questions/1376391/how-to-permanently-save-an-xrandr-configuration-for-a-monitor-even-after-reboot)
+# Howdy/Slimbook Face (github), 
+# Password manager (?)
