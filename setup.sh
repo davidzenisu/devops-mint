@@ -47,19 +47,18 @@ NC='\033[0m' # No Color
 
 echo -e "${CYAN} Step 1: Updating advanced package tool (apt)${NC}"
 
-apt update
-apt upgrade
+apt update >> ./linux-mint-setup.log
+apt upgrade >> ./linux-mint-setup.log
 
 echo -e "${CYAN} Step 2: Installing ansible${NC}"
 
-apt install software-properties-common -y
-sudo add-apt-repository --yes ppa:ansible/ansible
-apt install ansible -y
+apt install software-properties-common -y >> ./linux-mint-setup.log
+sudo add-apt-repository --yes ppa:ansible/ansible >> ./linux-mint-setup.log
+apt install ansible -y >> ./linux-mint-setup.log
 
 echo -e "${CYAN} Step 3: Installing git${NC}"
 
-echo Install git
-apt install git-all -y
+apt install git-all -y  >> ./linux-mint-setup.log
 
 echo -e "${CYAN} Step 4: Running playbook using ansible-pull${NC}"
 
