@@ -1,5 +1,5 @@
-# devops-mint
-Setup scripts and ansible playbook to get workstation up and running as quickly as possible.
+# iac-mint
+Setup scripts and ansible playbook to get a linux mint workstation up and running as quickly as possible.
 
 ## Quickstart
 
